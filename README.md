@@ -108,36 +108,11 @@ lib/
 5. Review tests that follow the same structure as the code
 
 ## Areas for Improvement
-
-1. Transaction Security & Status Management
-   - Add transaction status (pending, confirmed, failed, cancelled)
-   - Implement unique transaction ID (nonce) to prevent double-spending
-   - Add digital signature support for transaction verification
-   - Support transaction metadata for payment references and notes
-
-2. Enhanced Balance Management
-   - Support multiple balance types (total, available, pending, reserved)
-   - Implement transaction limits (daily, per-transaction)
-   - Add fee management system
-   - Support balance snapshots for auditing
-
-3. Account Security Features
-   - Implement address whitelisting for trusted recipients
-   - Add two-factor authentication support
-   - Support multi-signature for high-value transactions
-   - Add account recovery mechanisms
-
-4. Compliance & Audit System
-   - Maintain comprehensive audit trails
-   - Add KYC/AML support with verification levels
-   - Implement transaction monitoring and reporting
-   - Support blacklist checking
-
-5. System Scalability
-   - Add database persistence layer
-   - Implement event system for transaction tracking
-   - Support batch operations for multiple transfers
-   - Add API rate limiting and authentication
+1.Persistence layer for data storage
+2.Transaction rollback mechanisms
+3.User authentication and authorization
+4.API documentation
+5.Performance optimization for large scale usage
 
 ## Development Notes
 
