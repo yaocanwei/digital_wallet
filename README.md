@@ -39,13 +39,50 @@ A simple, centralized digital wallet system implemented in Ruby that supports ba
 ### Prerequisites
 - Ruby >= 2.6.0
 
-### Installation
+```bash
+# Clone the repository
+git clone git@github.com:yaocanwei/digital_wallet.git
+cd digital_wallet
+
+# Set execute permissions for scripts
+chmod +x bin/console
+chmod +x bin/setup
+
+# Install dependencies
+bundle install
+
+# Run tests to verify setup
+rake test
+```
+
+### Building & Installing Locally
+```bash
+# Build the gem
+gem build digital_wallet.gemspec
+
+# Install the gem locally
+gem install ./digital_wallet-0.1.0.gem
+
+# Verify installation
+gem list digital_wallet
+```
+
+### Installation Options
 ```ruby
-# Add to your Gemfile
+# Option 1: Add to your Gemfile
 gem 'digital_wallet'
 
-# Or install directly
+# Option 2: Install directly
 gem install digital_wallet
+```
+
+### Interactive Development
+```bash
+# Start console with the gem loaded
+./bin/console
+
+# Or use IRB
+irb -r digital_wallet
 ```
 
 ### Basic Usage
@@ -71,6 +108,26 @@ puts wallet_system.get_balance('user2') # => 50
 
 # Get transaction history
 history = wallet_system.get_transaction_history('user1')
+```
+
+### Using with Rails
+```ruby
+# In your Gemfile
+gem 'digital_wallet'
+
+# Create an initializer (config/initializers/digital_wallet.rb)
+WALLET_SYSTEM = DigitalWallet::WalletSystem.new
+
+# Example controller usage
+class WalletsController < ApplicationController
+  def deposit
+    amount = params[:amount].to_f
+    WALLET_SYSTEM.deposit(current_user.id, amount)
+    redirect_to wallet_path, notice: 'Deposit successful'
+  rescue DigitalWallet::InvalidAmountError
+    redirect_to wallet_path, alert: 'Invalid amount'
+  end
+end
 ```
 
 ## Running Tests
