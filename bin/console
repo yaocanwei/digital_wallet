@@ -1,0 +1,7 @@
+# Directory: bin/console
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "digital_wallet"
+require "irb"
+IRB.start(__FILE__)
