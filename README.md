@@ -9,7 +9,6 @@ A simple, centralized digital wallet system implemented in Ruby that supports ba
 - User can send money to another user's wallet
 - User can check their wallet balance
 - Transaction history tracking
-- Comprehensive logging system
 
 ## Architecture & Design Decisions
 
