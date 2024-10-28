@@ -19,10 +19,6 @@ A simple, centralized digital wallet system implemented in Ruby that supports ba
   - Utils: Support functionality (Logger)
 
 ### Technical Decisions
-- Used BigDecimal for monetary values to ensure precision
-- In-memory storage using Hash for simplicity
-- UUID for unique transaction identification
-- JSON format for standardized logging
 - Pure Ruby implementation with minimal dependencies
 
 ### Error Handling
